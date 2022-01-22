@@ -1,5 +1,5 @@
 # reduxDemo
 Bhavik Jethava 
-BHAVIKJETHAVREDUX
+BHAVIKJETHAVAREDUX
 # reduxDemo
 # reduxDemo
