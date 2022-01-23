@@ -2,16 +2,15 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { styles } from './style';
 import { deleteUser, getUser } from '../../Types';
-import { Box, HStack, VStack, Text, Pressable, Avatar, FlatList,  AddIcon, } from 'native-base';
-import { DELETE_USER } from '../../Actions';
-
+import { Image } from 'react-native';
+import { Box, HStack, VStack, Text, Pressable, Avatar, FlatList } from 'native-base';
 
 const Home = () => {
     const dispatch = useDispatch();
-    const users = useSelector(state => state.users );
+    const userData = useSelector(state => state.users );
     const isLoading = useSelector(state => state.isLoading );
 
-    useEffect(() =>{
+    useEffect(() => {
         getUser(dispatch);
     },[])
 
@@ -29,22 +28,31 @@ const Home = () => {
                             <Text textTransform="uppercase" fontWeight="bold" color="black" >Delete</Text>
                         </Pressable>
                     </Box>
-                    {/* <Avatar bg="green.500" source={{ uri: item.avatar}} height={10} width={10}>
-                    </Avatar> */}
+                    {/* <Avatar
+                        size="48px"
+                        source={{ uri: item.avatar }}
+                    /> */}
+                     <Image
+                        style={{ width: 50,
+                            height: 50,}}
+                        source={{
+                        uri: item.avatar,
+                        }}
+                    />
                 </HStack>
             </Box>
         )
     }, [])
 
-
     const keyExtractor = useCallback((item) => item.id.toString(), []);
+    
     return(
         <Box safeArea height="100%">
             {isLoading ? <Text>Loading........!</Text> :
                 <FlatList
                     keyExtractor={keyExtractor}
-                    data={users}
-                    // extraData={users}
+                    data={userData}
+                    extraData={userData}
                     renderItem={renderItems}
                     contentContainerStyle={styles.container}
                 />

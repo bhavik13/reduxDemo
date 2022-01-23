@@ -1,6 +1,6 @@
 import { GET_USER, GET__SUCCESS_USER, GET_FAILURE_USER, DELETE_USER } from '../Actions';
 
-const INITIAL_STATE = { users: [], isLoading: false };
+export const INITIAL_STATE = { users: [], isLoading: false };
 
 const appReducer = (state = INITIAL_STATE, action) => {
     
@@ -9,7 +9,7 @@ const appReducer = (state = INITIAL_STATE, action) => {
             return {...state, isLoading: true};
 
         case GET__SUCCESS_USER: 
-            return {...state, isLoading: false, users: action.payload};
+            return {...state, isLoading: false, users: action.payload };
         
         case GET_FAILURE_USER: 
             return {...state, isLoading: false };   

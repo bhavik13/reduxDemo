@@ -19,7 +19,6 @@ export default class HttpUtility {
     }
 
     static validate = (response) => {
-        console.log("catch", response)
         if(response.status == 401){
 
         }else{
@@ -32,7 +31,6 @@ export default class HttpUtility {
         if(param){
             url += `?${queryString(param)}`;
         }
-        console.log("url", url);
        return await axios.get(url).then(this.parsejson).catch(this.validate);
     } 
 }
