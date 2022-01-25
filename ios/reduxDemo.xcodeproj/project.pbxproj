@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		742559BCAEA3E39DB1100A41 /* libPods-reduxDemo-reduxDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E1BD5B30BAA863A1373692 /* libPods-reduxDemo-reduxDemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F8F8C43D859846ACAE079973 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A211B5923664CA8AD2FD5F7 /* noop-file.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,9 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = reduxDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1492DA1A78FF7ACDFAE5877 /* libPods-reduxDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reduxDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		5A211B5923664CA8AD2FD5F7 /* noop-file.swift */ = {isa = PBXFileReference; name = "noop-file.swift"; path = "reduxDemo/noop-file.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		5BBD9BC19FA54AEEB44F78C7 /* reduxDemo-Bridging-Header.h */ = {isa = PBXFileReference; name = "reduxDemo-Bridging-Header.h"; path = "reduxDemo/reduxDemo-Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		780F70AB468A489F9E743975 /* SplashScreen.storyboard */ = {isa = PBXFileReference; name = "SplashScreen.storyboard"; path = "reduxDemo/SplashScreen.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				5A211B5923664CA8AD2FD5F7 /* noop-file.swift */,
+				5BBD9BC19FA54AEEB44F78C7 /* reduxDemo-Bridging-Header.h */,
+				780F70AB468A489F9E743975 /* SplashScreen.storyboard */,
 			);
 			name = reduxDemo;
 			sourceTree = "<group>";
@@ -245,6 +252,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E1BF894020CA4147AB7D2E97 /* reduxDemo-Bridging-Header.h in Resources */,
+				D291F0E6EBEF4E489471E638 /* SplashScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +422,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				F8F8C43D859846ACAE079973 /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +461,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reduxDemo.app/reduxDemo";
+				TARGETED_DEVICE_FAMILY = "1";
+				SWIFT_OBJC_BRIDGING_HEADER = reduxDemo/reduxDemo-Bridging-Header.h;
 			};
 			name = Debug;
 		};
@@ -475,6 +487,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reduxDemo.app/reduxDemo";
+				TARGETED_DEVICE_FAMILY = "1";
+				SWIFT_OBJC_BRIDGING_HEADER = reduxDemo/reduxDemo-Bridging-Header.h;
 			};
 			name = Release;
 		};
@@ -496,11 +510,14 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = reduxDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bhavik.reduxdemo";
+				PRODUCT_NAME = "reduxDemo";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+				TARGETED_DEVICE_FAMILY = "1";
+				SWIFT_OBJC_BRIDGING_HEADER = reduxDemo/reduxDemo-Bridging-Header.h;
+				CODE_SIGN_ENTITLEMENTS = "reduxDemo/reduxDemo.entitlements";
 			};
 			name = Debug;
 		};
@@ -521,10 +538,13 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = reduxDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bhavik.reduxdemo";
+				PRODUCT_NAME = "reduxDemo";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+				TARGETED_DEVICE_FAMILY = "1";
+				SWIFT_OBJC_BRIDGING_HEADER = reduxDemo/reduxDemo-Bridging-Header.h;
+				CODE_SIGN_ENTITLEMENTS = "reduxDemo/reduxDemo.entitlements";
 			};
 			name = Release;
 		};
@@ -591,6 +611,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				CODE_SIGN_ENTITLEMENTS = "reduxDemo/reduxDemo.entitlements";
 			};
 			name = Debug;
 		};
@@ -650,6 +671,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				CODE_SIGN_ENTITLEMENTS = "reduxDemo/reduxDemo.entitlements";
 			};
 			name = Release;
 		};

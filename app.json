@@ -1,4 +1,10 @@
 {
   "name": "reduxDemo",
-  "displayName": "reduxDemo"
+  "displayName": "reduxDemo",
+  "android": {
+    "package": "com.bhavik.reduxdemo"
+  },
+  "ios": {
+    "bundleIdentifier": "com.bhavik.reduxdemo"
+  }
 }
